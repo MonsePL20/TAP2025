@@ -1,0 +1,22 @@
+.botton {
+    -fx-background-color: #008080;
+    -fx-text-fill: white;
+    -fx-border-color:  blue;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    /* -fx-padding: 10, 10, 15, 10;  */
+
+}
+
+.botton:haver{
+     -fx-background-color: #800000;
+
+}
+
+#fontButton{
+     -fx-font: bold italic 20pt "Arial";
+     -fx-background-color: #800080;
+     -fx-text-fill:#000080;
+}
+
+

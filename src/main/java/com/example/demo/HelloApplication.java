@@ -1,7 +1,10 @@
 package com.example.demo;
 
+import com.example.demo.Vistas.Calculadora;
+import com.example.demo.Vistas.VentasRestaurante;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
@@ -10,46 +13,48 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import javafx.geometry.Insets;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
     private VBox vBox;
-    private MenuBar menuprincipal;
-    private Menu mencompetencia1,menconpetencia2;
-    private MenuItem mitCalculadora;
+    private MenuBar mnbPrincipal;
+    private Menu menCompentencia1, menCompetencia2;
+    private MenuItem mitCalculadora, mitRestaurante;
     private Scene escena;
 
     void CrearUI(){
         mitCalculadora = new MenuItem("Calculadora");
-        mencompetencia1 = new Menu("Competencia 1");
-        mencompetencia1.getItems().addAll(mitCalculadora);
-        menuprincipal = new MenuBar();
-        menuprincipal.getMenus().addAll(mencompetencia1);
+        mitCalculadora.setOnAction(event -> new Calculadora());
+        mitRestaurante = new MenuItem("Restaurante");
+        mitRestaurante.setOnAction(event -> new VentasRestaurante());
+        menCompentencia1 = new Menu("Competencia 1");
+        menCompentencia1.getItems().addAll(mitCalculadora, mitRestaurante);
+        mnbPrincipal = new MenuBar();
+        mnbPrincipal.getMenus().addAll(menCompentencia1);
+        vBox = new VBox(mnbPrincipal);
+        escena = new Scene(vBox);
+        escena.getStylesheets().add(getClass().getResource("/styles/main.css").toString());
     }
 
     @Override
     public void start(Stage stage) throws IOException {
-        vBox = new VBox();
-        stage.setTitle(" Hola Mundo de Eventos :)");
-        stage.setScene(new Scene(vBox,200,200));
+        CrearUI();
+        stage.setTitle("Hola Mundo de Eventos :)");
+        stage.setScene(escena);
         stage.show();
         stage.setMaximized(true);
-
     }
 
     public static void main(String[] args) {
         launch();
     }
-
     void clickEvent(){
-        System.out.println("Eventos desde un metodo :)");
+        System.out.println("Evento desde un metodo :)");
     }
-
-
-
 }
-/*public class HelloApplication extends Application {
+
+/*
+public class HelloApplication extends Application {
     private Button btnsaludo,btnsaludo2,btnsaludo3;
     private VBox vBox;
 
@@ -69,19 +74,12 @@ public class HelloApplication extends Application {
         stage.setScene(new Scene(vBox,200,200));
         stage.show();
         stage.setMaximized(true);
-
-
     }
-
     public static void main(String[] args) {
         launch();
     }
-
     void clickEvent(){
         System.out.println("Eventos desde un metodo :)");
     }
-
-
-
 }
 */
