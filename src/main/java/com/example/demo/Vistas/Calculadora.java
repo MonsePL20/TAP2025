@@ -28,7 +28,7 @@ public class Calculadora extends Stage {
         vBox.setSpacing(10);
         vBox.setPadding(new Insets(10));
         escena = new Scene(vBox, 200, 200);
-        escena.getStylesheets().add(getClass().getResource("styles/main.css").toString());
+        escena.getStylesheets().add(getClass().getResource("/styles/main.css").toExternalForm());
     }
 
     public void CrearKeyboard() {

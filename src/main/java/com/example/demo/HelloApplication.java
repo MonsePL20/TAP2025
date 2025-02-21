@@ -2,12 +2,9 @@ package com.example.demo;
 
 import com.example.demo.Vistas.Calculadora;
 import com.example.demo.Vistas.VentasRestaurante;
-import com.example.demo.modulos.Conexion;
+import com.example.demo.modelos.Conexion;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -15,7 +12,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class HelloApplication extends Application {
     private VBox vBox;
