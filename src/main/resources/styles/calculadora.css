@@ -1,22 +1,20 @@
-.botton {
-    -fx-background-color: #008080;
+.button{
+    -fx-background-color: #de6161;
     -fx-text-fill: white;
-    -fx-border-color:  blue;
+    -fx-border-color: black;
     -fx-border-radius: 20;
     -fx-background-radius: 20;
-    /* -fx-padding: 10, 10, 15, 10;  */
-
+    /*-fx-padding: 60, 10, 15, 60;*/
 }
 
-.botton:haver{
-     -fx-background-color: #800000;
-
+.button:hover{
+    -fx-background-color: #4a7cc9;
 }
 
 #fontButton{
-     -fx-font: bold italic 20pt "Arial";
-     -fx-background-color: #800080;
-     -fx-text-fill:#000080;
+    -fx-font: bold italic "Arial";
+    -fx-background-color: #efe4e4;
+    -fx-text-fill: #FF0000;
 }
 
 

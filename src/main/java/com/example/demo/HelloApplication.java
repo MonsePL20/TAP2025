@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.Vistas.Calculadora;
 import com.example.demo.Vistas.VentasRestaurante;
+import com.example.demo.modulos.Conexion;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -14,6 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class HelloApplication extends Application {
     private VBox vBox;
@@ -22,7 +24,7 @@ public class HelloApplication extends Application {
     private MenuItem mitCalculadora, mitRestaurante;
     private Scene escena;
 
-    void CrearUI(){
+    void CrearUI() {
         mitCalculadora = new MenuItem("Calculadora");
         mitCalculadora.setOnAction(event -> new Calculadora());
         mitRestaurante = new MenuItem("Restaurante");
@@ -33,13 +35,15 @@ public class HelloApplication extends Application {
         mnbPrincipal.getMenus().addAll(menCompentencia1);
         vBox = new VBox(mnbPrincipal);
         escena = new Scene(vBox);
-        escena.getStylesheets().add(getClass().getResource("/styles/main.css").toString());
+        escena.getStylesheets().add(getClass().getResource("/styles/main.css").toExternalForm());
     }
 
     @Override
     public void start(Stage stage) throws IOException {
+        Conexion.create_connection();
         CrearUI();
         stage.setTitle("Hola Mundo de Eventos :)");
+        //stage.setScene(new Scene(vBox));
         stage.setScene(escena);
         stage.show();
         stage.setMaximized(true);
@@ -48,10 +52,13 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
-    void clickEvent(){
+
+    void clickEvent() {
         System.out.println("Evento desde un metodo :)");
     }
 }
+
+
 
 /*
 public class HelloApplication extends Application {
