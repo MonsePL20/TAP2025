@@ -1,8 +1,10 @@
 package com.example.demo;
 
-import com.example.demo.Vistas.Calculadora;
-import com.example.demo.Vistas.VentasRestaurante;
 import com.example.demo.modelos.Conexion;
+import com.example.demo.Vistas.Calculadora;
+import com.example.demo.Vistas.ListaClientes;
+import com.example.demo.Vistas.VentasRestaurante;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -24,7 +26,8 @@ public class HelloApplication extends Application {
         mitCalculadora = new MenuItem("Calculadora");
         mitCalculadora.setOnAction(event -> new Calculadora());
         mitRestaurante = new MenuItem("Restaurante");
-        mitRestaurante.setOnAction(event -> new VentasRestaurante());
+        mitRestaurante.setOnAction(actionEvent -> new ListaClientes());
+        //mitRestaurante.setOnAction(event -> new VentasRestaurante());
         menCompentencia1 = new Menu("Competencia 1");
         menCompentencia1.getItems().addAll(mitCalculadora, mitRestaurante);
         mnbPrincipal = new MenuBar();
